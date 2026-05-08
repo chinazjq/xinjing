@@ -1,0 +1,16 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(gh api *)",
+      "WebFetch(domain:api.github.com)",
+      "WebFetch(domain:raw.githubusercontent.com)",
+      "Read(//c/Users/zjq/.claude/**)",
+      "Read(//c/Users/zjq/.claude/skills/**)",
+      "Bash(curl -fsSL \"https://raw.githubusercontent.com/anthropics/skills/main/skills/frontend-design/SKILL.md\" -o ~/.claude/skills/frontend-design/SKILL.md)",
+      "Bash(python -c ' *)"
+    ],
+    "additionalDirectories": [
+      "C:\\Users\\zjq\\.claude\\skills"
+    ]
+  }
+}

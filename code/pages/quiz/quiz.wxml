@@ -1,0 +1,73 @@
+<view class="quiz" style="--tc:{{theme.main}};--tb:{{theme.bg}}">
+  <view class="topbar">
+    <view class="progress">
+      <view class="progress-bar" style="width:{{percent}}%"></view>
+    </view>
+    <view class="progress-text font-mono">
+      <text>{{index + 1}}</text>
+      <text class="slash">/</text>
+      <text>{{total}}</text>
+    </view>
+  </view>
+
+  <view class="q-block">
+    <view class="q-idx font-serif-italic">Q{{index + 1}}.</view>
+    <view class="q-text font-serif">{{current.q || current.title || '请选择与你更接近的一项'}}</view>
+  </view>
+
+  <!-- Binary A/B -->
+  <view wx:if="{{mode === 'binary'}}" class="opts">
+    <view class="opt" bindtap="onPickBinary" data-v="a" hover-class="opt-hover" hover-stay-time="100">
+      <view class="opt-mark font-mono">A</view>
+      <view class="opt-text">{{current.a}}</view>
+    </view>
+    <view class="opt-div font-serif-italic">— or —</view>
+    <view class="opt" bindtap="onPickBinary" data-v="b" hover-class="opt-hover" hover-stay-time="100">
+      <view class="opt-mark font-mono">B</view>
+      <view class="opt-text">{{current.b}}</view>
+    </view>
+  </view>
+
+  <!-- Multi choice -->
+  <view wx:elif="{{mode === 'multi'}}" class="opts">
+    <view
+      wx:for="{{current.opts}}"
+      wx:key="index"
+      class="opt"
+      data-i="{{index}}"
+      bindtap="onPickMulti"
+      hover-class="opt-hover"
+      hover-stay-time="100"
+    >
+      <view class="opt-mark font-mono">{{letters[index]}}</view>
+      <view class="opt-text">{{item.t}}</view>
+    </view>
+  </view>
+
+  <!-- Likert 5 -->
+  <view wx:elif="{{mode === 'likert'}}" class="likert">
+    <view class="likert-labels font-mono u-caps">
+      <text>不同意</text>
+      <text>中立</text>
+      <text>非常同意</text>
+    </view>
+    <view class="likert-dots">
+      <view
+        wx:for="{{[1,2,3,4,5]}}"
+        wx:key="*this"
+        class="ldot"
+        data-v="{{item}}"
+        bindtap="onPickLikert"
+        hover-class="ldot-hover"
+        hover-stay-time="100"
+      >
+        <view class="ldot-inner" style="width:{{item*16+24}}rpx;height:{{item*16+24}}rpx"></view>
+        <view class="ldot-num font-mono">{{item}}</view>
+      </view>
+    </view>
+  </view>
+
+  <view class="footer safe-bottom">
+    <view class="back font-mono u-caps" bindtap="onBack" wx:if="{{index > 0}}">← BACK</view>
+  </view>
+</view>

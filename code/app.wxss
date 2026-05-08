@@ -1,0 +1,109 @@
+/* ============================================================
+   心镜 · Nine Mirrors — Global Design System
+   Editorial × Eastern Minimal
+   ============================================================ */
+
+page {
+  --ink: #0E0E10;
+  --ink-soft: #1A1A1D;
+  --paper: #F4EEE3;
+  --paper-warm: #EFE7D6;
+  --paper-deep: #E6DCC5;
+  --stone-900: #2D2A24;
+  --stone-700: #605A4E;
+  --stone-500: #8B8578;
+  --stone-300: #BEB7A6;
+  --stone-100: #D9D1BD;
+  --hairline: rgba(14, 14, 16, 0.14);
+  --hairline-dim: rgba(14, 14, 16, 0.08);
+
+  --ember: #C94F1E;
+  --jade:  #2F5E4F;
+  --iris:  #7F77DD;
+  --amber: #EF9F27;
+  --sky:   #378ADD;
+  --plum:  #534AB7;
+  --rose:  #D4537E;
+  --saffron: #BA7517;
+
+  background: var(--paper);
+  color: var(--ink);
+  font-family: "PingFang SC", "Noto Sans SC", -apple-system, sans-serif;
+  font-size: 28rpx;
+  line-height: 1.6;
+}
+
+page[data-theme="dark"] {
+  --ink: #F4EEE3;
+  --paper: #0E0E10;
+  --paper-warm: #1A1A1D;
+  --paper-deep: #222224;
+  --stone-900: #D9D1BD;
+  --stone-700: #BEB7A6;
+  --stone-500: #8B8578;
+  --hairline: rgba(244, 238, 227, 0.18);
+  --hairline-dim: rgba(244, 238, 227, 0.08);
+}
+
+view, text, button { box-sizing: border-box; }
+
+.font-serif { font-family: "Songti SC", "Source Han Serif SC", "Noto Serif SC", serif; }
+.font-mono { font-family: "SF Mono", Menlo, Consolas, monospace; letter-spacing: 0.04em; }
+.font-lat { font-family: "Times New Roman", "Georgia", serif; font-style: italic; }
+.font-serif-italic { font-family: "Times New Roman", "Georgia", "Songti SC", serif; font-style: italic; }
+
+.u-caps {
+  font-family: "SF Mono", Menlo, monospace;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  font-size: 20rpx;
+  color: var(--stone-500);
+}
+
+.u-hairline { border-top: 1rpx solid var(--hairline); }
+
+.u-display-cjk {
+  font-family: "Songti SC", "Noto Serif SC", serif;
+  font-weight: 900;
+  letter-spacing: -0.01em;
+  line-height: 1.05;
+}
+
+.btn-primary {
+  background: var(--ink);
+  color: var(--paper);
+  border-radius: 999rpx;
+  padding: 28rpx 40rpx;
+  font-size: 30rpx;
+  letter-spacing: 0.12em;
+  text-align: center;
+  font-family: "Songti SC", "Noto Serif SC", serif;
+  font-weight: 500;
+}
+
+.btn-ember {
+  background: var(--ember);
+  color: var(--paper);
+  border-radius: 999rpx;
+  padding: 28rpx 40rpx;
+  text-align: center;
+  font-size: 28rpx;
+  letter-spacing: 0.1em;
+  font-family: "Songti SC", "Noto Serif SC", serif;
+  font-weight: 500;
+}
+
+.btn-primary::after,
+.btn-ember::after { border: none; }
+
+.grain-overlay {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 999;
+  opacity: 0.22;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='180' height='180'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 0.08 0'/></filter><rect width='100%25' height='100%25' filter='url(%23n)'/></svg>");
+  mix-blend-mode: multiply;
+}
+
+.safe-bottom { padding-bottom: env(safe-area-inset-bottom); }

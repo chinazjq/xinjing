@@ -1,0 +1,515 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>心镜 · Nine Mirrors — UI Design Deck</title>
+<link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+<div class="grain"></div>
+
+<main class="showcase">
+
+  <!-- ===== TOP BAR ===== -->
+  <header class="sc-top">
+    <div class="logo">心镜<em>Nine Mirrors</em></div>
+    <div class="coord">
+      FILE · <span style="color:var(--ink)">XJ-UI-V1.0</span><br />
+      ISSUE · 2026.04 / DESIGN DECK<br />
+      CHANNEL · 微信小程序 WECHAT MP
+    </div>
+  </header>
+
+  <!-- ===== HERO ===== -->
+  <section class="sc-hero">
+    <h1 class="big">
+      照<span class="ember">见</span><br/>自己的<br/>九种样子。
+      <span class="mirror">— a mirror, nine facets.</span>
+    </h1>
+    <div class="manifesto">
+      <p class="lead">我们不相信一个答案能定义你，但相信九面镜子能照见更完整的你。</p>
+      <p>心镜把 MBTI、九型、依恋、霍兰德、大五、色彩、恋爱脑、搞怪 SBTI 与 EQ 情商共九套测评，收束于同一种节制而深刻的视觉语言——像一本等你翻阅的精装刊物。</p>
+      <div class="mono-stamp">
+        <span>9 TESTS</span>
+        <span>402 QUESTIONS</span>
+        <span>∞ REFLECTIONS</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== SECTION 01 · DESIGN PRINCIPLES ===== -->
+  <section class="sc-section">
+    <div class="sec-head">
+      <div class="sec-no">01 — 设计准则 / PRINCIPLES</div>
+      <h2 class="sec-title">拒绝 AI 感<em>Not another gradient.</em></h2>
+    </div>
+    <div class="type-spec">
+      <div>
+        <div class="type-display">
+          <div class="tag">主张 · TENET 01</div>
+          <div class="demo-cjk">克制</div>
+          <p class="demo-body" style="margin-top:16px">以米纸作底、墨色为骨。拒绝 Inter、Roboto、紫渐变等过度通用的 AI 审美；以衬线汉字和编号索引重建产品的文学感与仪式感。</p>
+        </div>
+        <div class="type-display">
+          <div class="tag">主张 · TENET 02</div>
+          <div class="demo-lat">Editorial rhythm.</div>
+          <p class="demo-body" style="margin-top:16px">借用印刷杂志的版式语言——偏移编号、分区索引、细线分隔、单色大字——让每一屏都像一页可收藏的刊物内页。</p>
+        </div>
+        <div class="type-display">
+          <div class="tag">主张 · TENET 03</div>
+          <div class="demo-cjk" style="font-size:56px">镜</div>
+          <p class="demo-body" style="margin-top:16px">产品名取自"心镜"，故以<strong>圆</strong>为核心图形语言：测试图标、结果光晕、分享海报上的月轮——圆是镜面，是反射，也是一次次照见。</p>
+        </div>
+      </div>
+      <div>
+        <div class="type-display">
+          <div class="tag">字体 · TYPEFACE 01 / DISPLAY CJK</div>
+          <div class="demo-cjk">照见</div>
+          <div class="demo-mono" style="margin-top:10px">NOTO SERIF SC · 900 · LETTER-SPACING -0.01em</div>
+        </div>
+        <div class="type-display">
+          <div class="tag">字体 · TYPEFACE 02 / DISPLAY LATIN</div>
+          <div class="demo-lat">Mirror &amp; Self</div>
+          <div class="demo-mono" style="margin-top:10px">INSTRUMENT SERIF · ITALIC · 400</div>
+        </div>
+        <div class="type-display">
+          <div class="tag">字体 · TYPEFACE 03 / BODY</div>
+          <p class="demo-body">在沉浸式答题中，字号、行高、字重的克制远胜过夸张的特效——文字的呼吸本身就是节奏。</p>
+          <div class="demo-mono" style="margin-top:10px">NOTO SANS SC · 400/500 · 14–17px</div>
+        </div>
+        <div class="type-display">
+          <div class="tag">字体 · TYPEFACE 04 / LABEL</div>
+          <div class="demo-mono" style="font-size:14px">XJ-UI-V1.0 / ISSUE 04 / 168·HOURS</div>
+          <div class="demo-mono" style="margin-top:10px">JETBRAINS MONO · 500 · TRACKING 0.2em</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== SECTION 02 · PALETTE ===== -->
+  <section class="sc-section">
+    <div class="sec-head">
+      <div class="sec-no">02 — 色彩 / PALETTE</div>
+      <h2 class="sec-title">墨、米、与九种情绪<em>ink, rice paper &amp; nine moods.</em></h2>
+    </div>
+    <div class="palette">
+      <div class="swatch" data-tone="dark" style="background:#0E0E10"><div><div class="name">墨</div><div class="hex">#0E0E10</div></div><div class="num">01</div></div>
+      <div class="swatch" data-tone="light" style="background:#F4EEE3"><div><div class="name">纸</div><div class="hex">#F4EEE3</div></div><div class="num">02</div></div>
+      <div class="swatch" data-tone="dark" style="background:#C94F1E"><div><div class="name">烬</div><div class="hex">#C94F1E</div></div><div class="num">03</div></div>
+      <div class="swatch" data-tone="dark" style="background:#2F5E4F"><div><div class="name">翠</div><div class="hex">#2F5E4F</div></div><div class="num">04</div></div>
+      <div class="swatch" data-tone="dark" style="background:#7F77DD"><div><div class="name">紫</div><div class="hex">#7F77DD</div></div><div class="num">05</div></div>
+      <div class="swatch" data-tone="light" style="background:#EF9F27"><div><div class="name">琥</div><div class="hex">#EF9F27</div></div><div class="num">06</div></div>
+      <div class="swatch" data-tone="dark" style="background:#378ADD"><div><div class="name">天</div><div class="hex">#378ADD</div></div><div class="num">07</div></div>
+      <div class="swatch" data-tone="dark" style="background:#D4537E"><div><div class="name">玫</div><div class="hex">#D4537E</div></div><div class="num">08</div></div>
+      <div class="swatch" data-tone="light" style="background:#8B8578"><div><div class="name">石</div><div class="hex">#8B8578</div></div><div class="num">09</div></div>
+    </div>
+    <p style="max-width:60ch; margin-top:36px; font-family:var(--font-serif-cjk); font-size:15px; color:var(--stone-900); line-height:1.75">
+      基础只用两色——深墨与米纸，构建稳定的视觉场。九种"情绪色"只在进入具体测试或结果时才显露，形成"平素为空、照见则亮"的节奏，也避免了首页的色彩噪音。
+    </p>
+  </section>
+
+  <!-- ===== SECTION 03 · SCREENS ===== -->
+  <section class="sc-section">
+    <div class="sec-head">
+      <div class="sec-no">03 — 屏幕 / SCREENS</div>
+      <h2 class="sec-title">七页刊物，一个产品<em>the product, as seven spreads.</em></h2>
+    </div>
+
+    <div class="phone-grid">
+
+      <!-- 01 HOME -->
+      <div class="phone-cell">
+        <div class="label"><span class="num">01</span><span>HOME · 首页</span></div>
+        <div class="phone">
+          <div class="screen home">
+            <div class="statusbar"><span>9:41</span><span class="dots"><span class="dot"></span><span class="dot"></span><span class="dot"></span></span></div>
+            <div class="s-body">
+              <div class="hero-block">
+                <div class="greet">本日 · 04.17 · TUE</div>
+                <h1>照见<em>mirror,</em><br/>今天的你。</h1>
+                <p class="sub">九套测评，从严肃的自我觉察到轻盈的自嘲玩笑——选一面开始。</p>
+                <div class="seeker">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+                  <input placeholder="搜索：MBTI、依恋、恋爱脑……" />
+                  <span class="kbd">⌕</span>
+                </div>
+                <div class="tags">
+                  <span class="tag on">全部</span>
+                  <span class="tag">性格</span>
+                  <span class="tag">职业</span>
+                  <span class="tag">情感</span>
+                  <span class="tag">趣味</span>
+                </div>
+              </div>
+
+              <div class="section-mark">
+                <h2>今日推荐<em>today</em></h2>
+                <span class="more">VIEW ALL ⟶</span>
+              </div>
+
+              <div class="card-list">
+                <div class="card hero">
+                  <div class="glyph-bg"></div>
+                  <div class="idx">FEATURED · 01</div>
+                  <div class="ttl">SBTI<em>搞怪人格</em></div>
+                  <div class="line">20 题 · 3 分钟 · 看看你是吗喽还是摆烂大师。</div>
+                  <div class="cta">开始 · begin →</div>
+                </div>
+
+                <div class="card" data-test="mbti">
+                  <div>
+                    <div class="idx">NO. 02 · 严肃向</div>
+                    <div class="ttl">MBTI<em>十六型人格</em></div>
+                    <div class="line">最经典的自我坐标，60 题定位一种你。</div>
+                    <div class="meta"><span>60 题</span><span>·</span><span>10 分钟</span><span>·</span><span>♨ 火热</span></div>
+                  </div>
+                  <div class="glyph">M</div>
+                </div>
+
+                <div class="card" data-test="attach">
+                  <div>
+                    <div class="idx">NO. 03 · 亲密关系</div>
+                    <div class="ttl">依恋风格<em>attachment</em></div>
+                    <div class="line">安全、焦虑、回避或恐惧——你在爱里是谁？</div>
+                    <div class="meta"><span>40 题</span><span>·</span><span>6 分钟</span></div>
+                  </div>
+                  <div class="glyph">A</div>
+                </div>
+
+                <div class="card" data-test="color">
+                  <div>
+                    <div class="idx">NO. 04 · 快速测</div>
+                    <div class="ttl">颜色性格<em>chromatic</em></div>
+                    <div class="line">红 · 蓝 · 黄 · 绿——你本来是哪一种光？</div>
+                    <div class="meta"><span>24 题</span><span>·</span><span>3 分钟</span></div>
+                  </div>
+                  <div class="glyph" style="color:var(--ink)">◉</div>
+                </div>
+              </div>
+            </div>
+            <div class="tabbar">
+              <div class="tab active"><span class="glyph">家</span><span>HOME</span></div>
+              <div class="tab"><span class="glyph">探</span><span>EXPLORE</span></div>
+              <div class="tab"><span class="glyph">我</span><span>MINE</span></div>
+            </div>
+          </div>
+        </div>
+        <p class="desc">首页即刊物封面——编辑推荐居首，九款测评依偏好色展开，像翻开一本合订本。</p>
+      </div>
+
+      <!-- 02 TEST INTRO -->
+      <div class="phone-cell">
+        <div class="label"><span class="num">02</span><span>INTRO · 测试序言</span></div>
+        <div class="phone">
+          <div class="screen intro">
+            <div class="statusbar"><span>9:41</span><span class="dots"><span class="dot"></span><span class="dot"></span><span class="dot"></span></span></div>
+            <div class="s-body" style="padding-bottom:0">
+              <div class="s-head">
+                <div><div class="page-mark">← 返回</div></div>
+                <div class="meta">MBTI · 严肃向<br/>TEST NO. 02 / 09</div>
+              </div>
+              <div class="stage">
+                <div class="intro-eyebrow">PERSONALITY / PRELUDE</div>
+                <h1>十六<br/>型人格<em>MBTI.</em></h1>
+              </div>
+              <div class="halo"></div>
+              <div class="rules">
+                <div class="rule"><span class="num">i</span><div class="body">理论来源<small>Myers–Briggs Type Indicator · 基于荣格心理类型</small></div><span class="val">1944</span></div>
+                <div class="rule"><span class="num">ii</span><div class="body">题量与时长<small>60 题 · 预计 8–12 分钟</small></div><span class="val">60Q · 10min</span></div>
+                <div class="rule"><span class="num">iii</span><div class="body">答题要点<small>凭第一直觉，没有对错之分</small></div><span class="val">INTUIT</span></div>
+              </div>
+              <div class="cta-row">
+                <button class="btn-primary"><span class="dot"></span>开始测试<em>begin the mirror</em></button>
+                <div class="fine">本测试仅供娱乐参考 · NOT A DIAGNOSIS</div>
+              </div>
+            </div>
+            <div class="tabbar"><div class="tab"><span class="glyph">家</span><span>HOME</span></div><div class="tab"><span class="glyph">探</span><span>EXPLORE</span></div><div class="tab"><span class="glyph">我</span><span>MINE</span></div></div>
+          </div>
+        </div>
+        <p class="desc">进入测试前先给一页"序言"，用大字号、索引序号与光晕图形建立仪式感——不是按钮，是门。</p>
+      </div>
+
+      <!-- 03 QUIZ -->
+      <div class="phone-cell">
+        <div class="label"><span class="num">03</span><span>QUIZ · 答题</span></div>
+        <div class="phone">
+          <div class="screen quiz">
+            <div class="statusbar"><span>9:41</span><span class="dots"><span class="dot"></span><span class="dot"></span><span class="dot"></span></span></div>
+            <div class="s-body" style="padding-bottom:0">
+              <div class="progress-row">
+                <button class="back">←</button>
+                <div class="counter"><em>21</em> / 60</div>
+                <div class="bar"></div>
+              </div>
+              <div class="q-scene">
+                <div class="dim">维度 <em>E / I</em> · EXTRAVERSION</div>
+                <div class="q-no">21.</div>
+                <div class="q-text">周末有一整天空闲，你更倾向于——</div>
+              </div>
+              <div class="options">
+                <button class="opt"><span class="k">A</span>约朋友逛街、吃饭，或者去新开的咖啡店打卡。</button>
+                <button class="opt selected"><span class="k">B</span>一个人在家看书、看剧或者打游戏，享受独处时光。</button>
+              </div>
+              <div class="q-footer">
+                <span class="chip">第一直觉 · TRUST</span>
+                <span>选中后自动跳下一题</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <p class="desc">答题页只保留题干、两枚按钮、细线进度。一枚斜体大字编号来自编辑页码传统，消解考试焦虑。</p>
+      </div>
+
+      <!-- 04 AD INTERSTITIAL -->
+      <div class="phone-cell">
+        <div class="label"><span class="num">04</span><span>UNLOCK · 激励广告</span></div>
+        <div class="phone">
+          <div class="screen adlock">
+            <div class="blur-bg"></div>
+            <div class="statusbar"><span>9:41</span><span class="dots"><span class="dot" style="background:var(--paper)"></span><span class="dot" style="background:var(--paper)"></span><span class="dot" style="background:var(--paper)"></span></span></div>
+            <div class="adtop">
+              <span class="stamp">UNLOCK · <em>05</em></span>
+              <span class="stamp">MBTI / RESULT</span>
+            </div>
+            <div class="ghost">
+              你是<br/>E N F P
+              <em>— the advocate</em>
+            </div>
+            <div class="card">
+              <div class="tag">UNLOCKING · 观看解锁</div>
+              <h3>再等 15 秒，镜面就会打开。<em>— the mirror unfolds.</em></h3>
+              <div class="ad-slot">广告位 · 15s REWARDED VIDEO</div>
+              <div class="timer">
+                <div class="ring"><span>15</span></div>
+                <div class="note"><em>专属人格报告</em>将在广告结束后自动呈现，全程免费。</div>
+              </div>
+              <div class="mini"><span>微信流量主 · REWARD AD</span><span>SKIP UNAVAILABLE</span></div>
+            </div>
+          </div>
+        </div>
+        <p class="desc">把"等广告"重塑为"镜面即将开启的倒计时"——沉没成本最大时触发，以仪式化文案降低焦躁。</p>
+      </div>
+
+      <!-- 05 RESULT -->
+      <div class="phone-cell" style="grid-column: span 1;">
+        <div class="label"><span class="num">05</span><span>RESULT · 结果页（CROWN）</span></div>
+        <div class="phone">
+          <div class="screen result">
+            <div class="statusbar"><span>9:41</span><span class="dots"><span class="dot"></span><span class="dot"></span><span class="dot"></span></span></div>
+            <div class="scroll" style="overflow:auto">
+              <div class="hero-panel">
+                <div class="top"><span>RESULT · <em>无需再次解锁</em></span><span>MBTI / 02 OF 09</span></div>
+                <div class="type-code">TYPE · ENFP-A</div>
+                <div class="type-name">竞选者<em>The Advocate</em></div>
+                <div class="type-tag"><span>EXTRAVERTED</span><span>INTUITIVE</span><span>FEELING</span><span>PROSPECTING</span></div>
+                <div class="creed">你像夏天飞进屋里的萤火虫——短暂、明亮、总想把别人也照亮。你相信世界上所有的"可能性"都值得一次试探，即使每一次都要付出心血。</div>
+              </div>
+
+              <div class="section">
+                <div class="sec-head"><h4>四维剖面<em>four axes</em></h4><span class="idx">§ 01</span></div>
+                <div class="bars">
+                  <div class="bar" data-p="68"><div class="lbl"><em>外向 E</em><span>68%</span></div><div class="track"></div><div class="poles"><span>E</span><span>I</span></div></div>
+                  <div class="bar" data-p="74"><div class="lbl"><em>直觉 N</em><span>74%</span></div><div class="track"></div><div class="poles"><span>N</span><span>S</span></div></div>
+                  <div class="bar" data-p="56"><div class="lbl"><em>情感 F</em><span>56%</span></div><div class="track"></div><div class="poles"><span>F</span><span>T</span></div></div>
+                  <div class="bar" data-p="62"><div class="lbl"><em>感知 P</em><span>62%</span></div><div class="track"></div><div class="poles"><span>P</span><span>J</span></div></div>
+                </div>
+              </div>
+
+              <div class="section">
+                <div class="sec-head"><h4>优势与盲区<em>strength &amp; shadow</em></h4><span class="idx">§ 02</span></div>
+                <div class="strength-grid">
+                  <div class="cell"><div class="k">STRENGTH · 长处</div><div class="v">点燃他人的能力</div></div>
+                  <div class="cell"><div class="k">STRENGTH · 长处</div><div class="v">对"可能性"的直觉</div></div>
+                  <div class="cell"><div class="k">SHADOW · 暗面</div><div class="v">难以长久专注一件事</div></div>
+                  <div class="cell"><div class="k">SHADOW · 暗面</div><div class="v">在冲突中过度自责</div></div>
+                </div>
+              </div>
+
+              <div class="section prose">
+                <div class="sec-head"><h4>深度刻画<em>portrait</em></h4><span class="idx">§ 03</span></div>
+                <p>ENFP 是十六型中最难被一句话概括的一种——你既是热情的<em>发起者</em>，又是敏感的<em>感受者</em>。你擅长在一场饭局上同时让三个陌生人感到被看见，也擅长在凌晨三点因为一条短消息反复复盘意味。</p>
+                <p>你的能量不是恒定的电流，而是潮汐——涨潮时你可以带整支队伍向前，退潮时你需要一个谁都别找你的下午。</p>
+              </div>
+
+              <div class="section">
+                <div class="sec-head"><h4>同款灵魂<em>kindred souls</em></h4><span class="idx">§ 04</span></div>
+                <div class="famous">
+                  <div class="card"><div class="av">W</div><div class="nm">王家卫</div><div class="role">DIRECTOR</div></div>
+                  <div class="card"><div class="av">三</div><div class="nm">三毛</div><div class="role">WRITER</div></div>
+                  <div class="card"><div class="av">R</div><div class="nm">Robin W.</div><div class="role">ACTOR</div></div>
+                </div>
+              </div>
+
+              <div class="section">
+                <div class="sec-head"><h4>相性<em>chemistry</em></h4><span class="idx">§ 05</span></div>
+                <div class="pair">
+                  <div class="p-cell good"><div class="k">SOUL MATCH · 灵魂搭子</div><div class="v">INTJ<em>建筑师</em></div></div>
+                  <div class="p-cell"><div class="k">GROWTH CHALLENGE · 最大挑战</div><div class="v">ISTJ<em>物流师</em></div></div>
+                </div>
+              </div>
+
+              <div class="banner-ad">BANNER AD · 48dp · 持续展示</div>
+
+              <div class="foot-cta">
+                <button class="secondary">↻ 重测</button>
+                <button class="primary">分享这面镜子 · SHARE →</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <p class="desc">结果页是本产品的王冠——上半屏用墨色托一个人格名、一句箴言；下半屏像杂志内页展开剖析。值得截图的美学即转化率。</p>
+      </div>
+
+      <!-- 06 SHARE -->
+      <div class="phone-cell">
+        <div class="label"><span class="num">06</span><span>SHARE · 海报</span></div>
+        <div class="phone">
+          <div class="screen share">
+            <div class="statusbar" style="color:var(--paper)"><span>9:41</span><span class="dots"><span class="dot" style="background:var(--paper)"></span><span class="dot" style="background:var(--paper)"></span><span class="dot" style="background:var(--paper)"></span></span></div>
+            <div class="poster-wrap">
+              <div class="poster">
+                <div class="stamp">心镜 · NINE MIRRORS · <em>MBTI</em></div>
+                <div class="big">
+                  <div class="kind">I AM —</div>
+                  <div class="name">竞选者<em>ENFP · The Advocate</em></div>
+                  <div class="quote">"我像夏天飞进屋里的萤火虫——短暂、明亮、总想把别人也照亮。"</div>
+                </div>
+                <div class="qr-row">
+                  <div class="qr">
+                    <svg viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg">
+                      <rect width="60" height="60" fill="#F4EEE3"/>
+                      <g fill="#0E0E10">
+                        <rect x="4" y="4" width="14" height="14"/><rect x="7" y="7" width="8" height="8" fill="#F4EEE3"/><rect x="9" y="9" width="4" height="4"/>
+                        <rect x="42" y="4" width="14" height="14"/><rect x="45" y="7" width="8" height="8" fill="#F4EEE3"/><rect x="47" y="9" width="4" height="4"/>
+                        <rect x="4" y="42" width="14" height="14"/><rect x="7" y="45" width="8" height="8" fill="#F4EEE3"/><rect x="9" y="47" width="4" height="4"/>
+                        <rect x="22" y="6" width="3" height="3"/><rect x="27" y="4" width="3" height="3"/><rect x="33" y="8" width="3" height="3"/><rect x="22" y="12" width="3" height="3"/><rect x="30" y="14" width="3" height="3"/>
+                        <rect x="6" y="22" width="3" height="3"/><rect x="12" y="24" width="3" height="3"/><rect x="4" y="30" width="3" height="3"/><rect x="10" y="34" width="3" height="3"/>
+                        <rect x="22" y="22" width="3" height="3"/><rect x="28" y="24" width="3" height="3"/><rect x="34" y="22" width="3" height="3"/><rect x="26" y="30" width="3" height="3"/><rect x="22" y="36" width="3" height="3"/><rect x="32" y="36" width="3" height="3"/><rect x="36" y="30" width="3" height="3"/>
+                        <rect x="40" y="22" width="3" height="3"/><rect x="46" y="26" width="3" height="3"/><rect x="44" y="34" width="3" height="3"/><rect x="50" y="30" width="3" height="3"/><rect x="42" y="42" width="3" height="3"/><rect x="48" y="46" width="3" height="3"/>
+                        <rect x="22" y="44" width="3" height="3"/><rect x="28" y="48" width="3" height="3"/><rect x="34" y="50" width="3" height="3"/>
+                      </g>
+                    </svg>
+                  </div>
+                  <div class="who">长按识别<br/>照见你的那一面<em>mirror.xj</em></div>
+                </div>
+              </div>
+              <div class="sh-caption">你是哪一种？<em>点我测一测 →</em></div>
+            </div>
+            <div class="sh-actions">
+              <button class="act"><span class="ic">⎘</span><span>好友</span></button>
+              <button class="act pri"><span class="ic">⇣</span><span>保存图片</span></button>
+              <button class="act"><span class="ic">⌬</span><span>复制链接</span></button>
+            </div>
+          </div>
+        </div>
+        <p class="desc">分享海报 750×1334，以墨色为底、一轮橘色满月为图——无论在什么朋友圈背景下都能被认出。</p>
+      </div>
+
+      <!-- 07 PROFILE -->
+      <div class="phone-cell">
+        <div class="label"><span class="num">07</span><span>MINE · 个人档案</span></div>
+        <div class="phone">
+          <div class="screen profile">
+            <div class="statusbar"><span>9:41</span><span class="dots"><span class="dot"></span><span class="dot"></span><span class="dot"></span></span></div>
+            <div class="s-body">
+              <div class="p-head">
+                <h1>我的<br/>镜册<em>my mirrors.</em></h1>
+                <div class="who">
+                  <div class="av">沈</div>
+                  <div class="nm">SHEN · #0418</div>
+                </div>
+              </div>
+              <div class="stats">
+                <div class="s"><div class="n">07</div><div class="l">已测试</div></div>
+                <div class="s"><div class="n">04</div><div class="l">本周进度</div></div>
+                <div class="s"><div class="n">168h</div><div class="l">自省时长</div></div>
+              </div>
+              <div class="log-head">
+                <h2>测试档案<em>record</em></h2>
+                <span class="filter">最新 ↓</span>
+              </div>
+              <div class="log">
+                <div class="log-item"><div class="date">APR<em>17</em></div><div class="main"><div class="t">MBTI 十六型人格</div><div class="r">结果 · ENFP-A · 68 / 74 / 56 / 62</div></div><span class="pill iris">ENFP</span></div>
+                <div class="log-item"><div class="date">APR<em>14</em></div><div class="main"><div class="t">依恋风格</div><div class="r">结果 · 焦虑型 · 张力指数 71</div></div><span class="pill jade">A2</span></div>
+                <div class="log-item"><div class="date">APR<em>12</em></div><div class="main"><div class="t">SBTI 搞怪人格</div><div class="r">结果 · 摆烂大师</div></div><span class="pill ember">MOL</span></div>
+                <div class="log-item"><div class="date">APR<em>09</em></div><div class="main"><div class="t">九型人格</div><div class="r">结果 · 7w6 · 活跃翼探索者</div></div><span class="pill amber">7w6</span></div>
+                <div class="log-item"><div class="date">APR<em>04</em></div><div class="main"><div class="t">恋爱脑程度</div><div class="r">结果 · 中度恋爱脑 · 62%</div></div><span class="pill rose">62%</span></div>
+              </div>
+            </div>
+            <div class="tabbar"><div class="tab"><span class="glyph">家</span><span>HOME</span></div><div class="tab"><span class="glyph">探</span><span>EXPLORE</span></div><div class="tab active"><span class="glyph">我</span><span>MINE</span></div></div>
+          </div>
+        </div>
+        <p class="desc">历史记录不是一张列表，是一本"镜册"。每次点击即可重看完整结果页，毋需再看一次广告。</p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ===== SECTION 04 · MATRIX ===== -->
+  <section class="sc-section">
+    <div class="sec-head">
+      <div class="sec-no">04 — 九面镜色 / MODULE COLOR</div>
+      <h2 class="sec-title">九种情绪，九道光<em>nine moods, nine lights.</em></h2>
+    </div>
+    <div class="matrix">
+      <div class="matrix-row"><span class="idx">01</span><span class="name">MBTI<em>十六型人格</em></span><span class="line">最经典的人格坐标 · 60 题</span><span class="qty">10 MIN</span><span class="chip"><i style="background:#7F77DD"></i><i style="background:#AFA9EC"></i><i style="background:#EEEDFE"></i></span></div>
+      <div class="matrix-row"><span class="idx">02</span><span class="name">SBTI<em>搞怪人格</em></span><span class="line">又准又怪 · 吗喽 / 酒鬼 / 摆烂大师 / 社牛怪</span><span class="qty">3 MIN</span><span class="chip"><i style="background:#C94F1E"></i><i style="background:#F0997B"></i><i style="background:#FAECE7"></i></span></div>
+      <div class="matrix-row"><span class="idx">03</span><span class="name">Enneagram<em>九型人格</em></span><span class="line">九种核心动机 + 翼型分析 · 72 题</span><span class="qty">12 MIN</span><span class="chip"><i style="background:#EF9F27"></i><i style="background:#FAC775"></i><i style="background:#FAEEDA"></i></span></div>
+      <div class="matrix-row"><span class="idx">04</span><span class="name">Attachment<em>依恋风格</em></span><span class="line">安全 / 焦虑 / 回避 / 恐惧 · 亲密关系剖面</span><span class="qty">6 MIN</span><span class="chip"><i style="background:#1D9E75"></i><i style="background:#5DCAA5"></i><i style="background:#E1F5EE"></i></span></div>
+      <div class="matrix-row"><span class="idx">05</span><span class="name">Holland<em>霍兰德职业兴趣</em></span><span class="line">RIASEC 六边形 · 66 题 · 送推荐职业清单</span><span class="qty">10 MIN</span><span class="chip"><i style="background:#378ADD"></i><i style="background:#85B7EB"></i><i style="background:#E6F1FB"></i></span></div>
+      <div class="matrix-row"><span class="idx">06</span><span class="name">OCEAN<em>大五人格</em></span><span class="line">当代心理学共识框架 · 50 题 · 百分位解读</span><span class="qty">8 MIN</span><span class="chip"><i style="background:#534AB7"></i><i style="background:#7F77DD"></i><i style="background:#EEEDFE"></i></span></div>
+      <div class="matrix-row"><span class="idx">07</span><span class="name">Chromatic<em>颜色性格</em></span><span class="line">红 · 蓝 · 黄 · 绿 · 24 题 · 最快速最出片</span><span class="qty">3 MIN</span><span class="chip"><i style="background:#D94545"></i><i style="background:#EBC642"></i><i style="background:#3B7EC8"></i></span></div>
+      <div class="matrix-row"><span class="idx">08</span><span class="name">Love-Brain<em>恋爱脑程度</em></span><span class="line">恋爱脑指数 0–100 · 五级分层</span><span class="qty">5 MIN</span><span class="chip"><i style="background:#D4537E"></i><i style="background:#ED93B1"></i><i style="background:#FBEAF0"></i></span></div>
+      <div class="matrix-row"><span class="idx">09</span><span class="name">EQ<em>情商测试</em></span><span class="line">五大情商能力 · 60–140 分制 · 雷达图</span><span class="qty">7 MIN</span><span class="chip"><i style="background:#BA7517"></i><i style="background:#EF9F27"></i><i style="background:#FAEEDA"></i></span></div>
+    </div>
+  </section>
+
+  <!-- ===== SECTION 05 · COMPATIBILITY ===== -->
+  <section class="sc-section">
+    <div class="sec-head">
+      <div class="sec-no">05 — 小程序兼容 / WECHAT NOTES</div>
+      <h2 class="sec-title">审美优先，工程可抵达<em>beauty, but shippable.</em></h2>
+    </div>
+    <div class="type-spec">
+      <div>
+        <div class="type-display">
+          <div class="tag">尺寸 · VIEWPORT</div>
+          <p class="demo-body">基于 iPhone 13 / 14 基础宽度（375dp，微信小程序 rpx = 2×px），已适配 iPhone SE ~ Pro Max、Android 16:9 至 21:9 全屏段。所有屏幕高度采用 <code class="mono">100vh + safe-area-inset-bottom</code>。</p>
+        </div>
+        <div class="type-display">
+          <div class="tag">字体 · FONT STRATEGY</div>
+          <p class="demo-body">正式落地时将 display 层降级为系统衬线字体（iOS 苹方 / Android 思源黑体 + 宋体衬线），关键标题以 PNG/SVG 落字替代，保证视觉不劣化；小程序包体积不受影响。</p>
+        </div>
+      </div>
+      <div>
+        <div class="type-display">
+          <div class="tag">组件 · COMPONENTS</div>
+          <p class="demo-body">所有广告位使用微信官方 <code class="mono">&lt;ad type="video"&gt;</code> / <code class="mono">&lt;ad type="banner"&gt;</code> 组件；分享海报用 Canvas 2D 绘制；雷达图使用 ECharts for 小程序版。</p>
+        </div>
+        <div class="type-display">
+          <div class="tag">深色 · DARK MODE</div>
+          <p class="demo-body">主题内置 <code class="mono">ink / paper</code> 双套变量，监听 <code class="mono">wx.onThemeChange</code>，深色模式下墨与纸互换，情绪色饱和度自动 -8%。</p>
+        </div>
+        <div class="type-display">
+          <div class="tag">性能 · PERFORMANCE</div>
+          <p class="demo-body">首屏 &lt; 2s · 题目翻页 &lt; 100ms · 海报生成 &lt; 3s。grain 纹理用 base64 内嵌 SVG（&lt; 1KB），避免图片请求。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FOOT ===== -->
+  <footer class="sc-foot">
+    <div>
+      <div class="logo-small">心镜 · NINE MIRRORS</div>
+      <div style="margin-top:10px">UI DECK V1 · 2026.04 · 设计语言：EDITORIAL × EASTERN MINIMAL</div>
+    </div>
+    <div style="text-align:right; line-height:1.8">
+      <a href="screens/home.html">→ HOME</a> · <a href="screens/quiz.html">QUIZ</a> · <a href="screens/result.html">RESULT</a> · <a href="screens/share.html">SHARE</a><br/>
+      <a href="screens/intro.html">INTRO</a> · <a href="screens/ad.html">AD</a> · <a href="screens/profile.html">PROFILE</a>
+    </div>
+  </footer>
+</main>
+</body>
+</html>

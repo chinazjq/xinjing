@@ -1,0 +1,205 @@
+/* ====== BASE ====== */
+.explore { min-height: 100vh; background: #0B0B10; }
+
+/* ====== HERO ====== */
+.hero {
+  position: relative;
+  overflow: hidden;
+  padding: 90rpx 48rpx 72rpx;
+  background: #0B0B10;
+}
+
+/* Ambient glow orbs */
+.orb {
+  position: absolute;
+  border-radius: 50%;
+  pointer-events: none;
+}
+.orb-a {
+  width: 560rpx; height: 560rpx;
+  left: -120rpx; top: -140rpx;
+  background: radial-gradient(circle at 40% 38%, rgba(127,119,221,0.55) 0%, transparent 62%);
+}
+.orb-b {
+  width: 380rpx; height: 380rpx;
+  right: -90rpx; top: 0;
+  background: radial-gradient(circle at 58% 40%, rgba(239,159,39,0.35) 0%, transparent 62%);
+}
+.orb-c {
+  width: 340rpx; height: 340rpx;
+  left: 28%; bottom: -70rpx;
+  background: radial-gradient(circle at 50% 50%, rgba(93,202,165,0.32) 0%, transparent 62%);
+}
+
+/* Particle stars */
+.particles {
+  position: absolute;
+  top: 0; right: 0; bottom: 0; left: 0;
+  pointer-events: none;
+  overflow: hidden;
+}
+.pt {
+  position: absolute;
+  border-radius: 50%;
+  background: #fff;
+}
+@keyframes twinkle {
+  0%, 100% { opacity: 0.04; transform: scale(0.6); }
+  50% { opacity: 0.9; transform: scale(1.7); }
+}
+@keyframes float-pt {
+  0% { opacity: 0; transform: translateY(0px); }
+  25% { opacity: 0.8; }
+  100% { opacity: 0; transform: translateY(-28px); }
+}
+
+/* Hero text */
+.hero-body { position: relative; z-index: 2; }
+.hero-label {
+  font-size: 20rpx;
+  color: rgba(255,255,255,0.28);
+  letter-spacing: 8rpx;
+  margin-bottom: 18rpx;
+}
+.hero-title {
+  font-size: 130rpx;
+  font-weight: 900;
+  color: rgba(244,238,227,0.95);
+  line-height: 0.88;
+  letter-spacing: -0.02em;
+}
+.hero-em { color: #7F77DD; }
+.hero-sub {
+  font-size: 22rpx;
+  color: rgba(255,255,255,0.26);
+  margin-top: 22rpx;
+  font-style: italic;
+  letter-spacing: 2rpx;
+}
+
+/* ====== BENTO GRID ====== */
+.grid {
+  padding: 24rpx 24rpx 140rpx;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16rpx;
+}
+
+/* ====== CARD BASE ====== */
+.card {
+  position: relative;
+  overflow: hidden;
+  border-radius: 28rpx;
+  min-height: 308rpx;
+  background: rgba(255,255,255,0.04);
+  border: 1.5rpx solid rgba(255,255,255,0.07);
+}
+.card-hover { opacity: 0.65; }
+
+/* Full-width featured card */
+.card-wide {
+  grid-column: 1 / -1;
+  min-height: 210rpx;
+}
+
+/* Subtle top-edge highlight */
+.card-shine {
+  position: absolute;
+  top: 0; left: 12%; right: 12%;
+  height: 1rpx;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.18), transparent);
+  pointer-events: none;
+}
+
+/* Per-card color glow blob */
+.card-glow {
+  position: absolute;
+  top: 0; right: 0; bottom: 0; left: 0;
+  background: radial-gradient(ellipse at 20% 80%, var(--tc) 0%, transparent 58%);
+  opacity: 0.13;
+  pointer-events: none;
+}
+
+/* Inner layout */
+.card-inner {
+  position: relative;
+  z-index: 1;
+  padding: 26rpx 22rpx 24rpx;
+  height: 100%;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.card-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.card-idx {
+  font-size: 18rpx;
+  color: var(--tc);
+  letter-spacing: 3rpx;
+  opacity: 0.85;
+}
+.card-badge {
+  font-size: 15rpx;
+  color: var(--tc);
+  border: 1rpx solid var(--tc);
+  padding: 3rpx 14rpx;
+  border-radius: 20rpx;
+  letter-spacing: 3rpx;
+  opacity: 0.88;
+}
+.card-tag {
+  font-size: 15rpx;
+  color: rgba(255,255,255,0.2);
+  letter-spacing: 2rpx;
+}
+
+/* Central glyph — big & glowing */
+.card-glyph {
+  font-size: 96rpx;
+  font-weight: 900;
+  color: var(--tc);
+  line-height: 1;
+  text-align: center;
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-shadow: 0 0 20px var(--tc-soft, var(--tc));
+}
+
+/* Wide card: decorative oversized glyph floating right */
+.card-wide .card-glyph {
+  position: absolute;
+  right: 28rpx;
+  bottom: -8rpx;
+  font-size: 196rpx;
+  opacity: 0.16;
+  text-shadow: none;
+  flex: none;
+  display: block;
+}
+
+/* Bottom info */
+.card-foot { display: flex; flex-direction: column; gap: 4rpx; }
+.card-name {
+  font-size: 36rpx;
+  font-weight: 900;
+  color: rgba(244,238,227,0.92);
+  line-height: 1.1;
+}
+.card-en {
+  font-size: 20rpx;
+  color: rgba(244,238,227,0.3);
+  font-style: italic;
+}
+.card-meta {
+  font-size: 17rpx;
+  color: rgba(244,238,227,0.22);
+  letter-spacing: 2rpx;
+  margin-top: 5rpx;
+}

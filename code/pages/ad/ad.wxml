@@ -1,0 +1,28 @@
+<view class="adlock">
+  <view class="blur-bg"></view>
+
+  <view class="adtop">
+    <view class="stamp font-mono">UNLOCK · <text class="ember-text">{{test.idx}}</text></view>
+    <view class="stamp font-mono">{{test.nameEn ? test.nameEn : test.name}} / RESULT</view>
+  </view>
+
+  <view class="ghost font-serif">
+    你是<view class="ghost-en font-lat">— {{test.nameZh}}</view>
+  </view>
+
+  <view class="card">
+    <view class="card-tag font-mono">UNLOCKING · 观看解锁</view>
+    <view class="card-h font-serif">再等 15 秒，镜面就会打开。<text class="card-h-en font-lat">— the mirror unfolds.</text></view>
+    <view class="ad-slot font-mono">广告位 · 15s REWARDED VIDEO</view>
+    <view class="timer">
+      <view class="ring font-lat">15</view>
+      <view class="timer-note"><text class="timer-em font-serif">专属人格报告</text>将在广告结束后自动呈现，全程免费。</view>
+    </view>
+    <view class="mini font-mono">
+      <text>微信流量主 · REWARD AD</text>
+      <text>SKIP UNAVAILABLE</text>
+    </view>
+    <view class="btn-ember watch-btn" bindtap="onWatch">观看广告 · 解锁完整报告 →</view>
+    <view class="skip font-mono" bindtap="onSkip">SKIP · 查看简版</view>
+  </view>
+</view>

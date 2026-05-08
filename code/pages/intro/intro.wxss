@@ -1,0 +1,30 @@
+.intro { min-height: 100vh; padding-bottom: 220rpx; }
+
+.hero { padding: 120rpx 50rpx 80rpx; position: relative; }
+.hero-idx { color: var(--stone-500); letter-spacing: 6rpx; font-size: 22rpx; }
+.hero-glyph { font-size: 260rpx; line-height: 1; color: var(--tc); opacity: .18; position: absolute; right: 40rpx; top: 100rpx; }
+.hero-title { font-size: 120rpx; line-height: 1; color: var(--ink); margin-top: 30rpx; }
+.hero-en { font-size: 36rpx; color: var(--stone-700); margin-top: 20rpx; letter-spacing: 1rpx; }
+.hero-desc { font-size: 28rpx; color: var(--stone-700); margin-top: 40rpx; line-height: 1.8; }
+
+.body { padding: 60rpx 50rpx; }
+
+.block { margin-bottom: 50rpx; }
+.block .u-caps { font-size: 22rpx; color: var(--stone-500); letter-spacing: 4rpx; margin-bottom: 16rpx; }
+.block-text { font-size: 28rpx; color: var(--ink); line-height: 1.9; }
+
+.meta-grid {
+  display: flex;
+  gap: 20rpx;
+  padding: 30rpx 0;
+  margin: 40rpx 0;
+  border-top: 1rpx solid var(--hairline);
+  border-bottom: 1rpx solid var(--hairline);
+}
+.meta-cell { flex: 1; text-align: center; }
+.meta-cell .u-caps { font-size: 20rpx; color: var(--stone-500); letter-spacing: 3rpx; }
+.meta-val { font-size: 36rpx; margin-top: 10rpx; color: var(--ink); }
+
+.note { font-size: 22rpx; color: var(--stone-500); margin-top: 30rpx; line-height: 1.6; }
+
+.cta-wrap { position: fixed; bottom: 0; left: 0; right: 0; padding: 30rpx 50rpx 40rpx; background: var(--paper); border-top: 1rpx solid var(--hairline); }

@@ -1,0 +1,47 @@
+<view class="explore">
+
+  <!-- ===== HERO ===== -->
+  <view class="hero">
+    <view class="orb orb-a"></view>
+    <view class="orb orb-b"></view>
+    <view class="orb orb-c"></view>
+    <view class="particles">
+      <view wx:for="{{particles}}" wx:key="index" class="pt" style="{{item.style}}"></view>
+    </view>
+    <view class="hero-body">
+      <view class="hero-label font-mono">NINE MIRRORS · EXPLORE</view>
+      <view class="hero-title font-serif">九<text class="hero-em">面</text>镜</view>
+      <view class="hero-sub font-lat">{{tests.length}} facets of the self</view>
+    </view>
+  </view>
+
+  <!-- ===== BENTO GRID ===== -->
+  <view class="grid">
+    <view
+      wx:for="{{tests}}" wx:key="id"
+      class="card {{item.hot ? 'card-wide' : ''}}"
+      data-id="{{item.id}}"
+      bindtap="onTap"
+      style="--tc:{{item.theme.main}};--tc-soft:{{item.theme.soft}}"
+      hover-class="card-hover"
+      hover-stay-time="100"
+    >
+      <view class="card-shine"></view>
+      <view class="card-glow"></view>
+      <view class="card-inner">
+        <view class="card-top">
+          <view class="card-idx font-mono">{{item.idx}}</view>
+          <view wx:if="{{item.hot}}" class="card-badge font-mono">FEATURED</view>
+          <view wx:elif="{{item.tag}}" class="card-tag font-mono">{{item.tag}}</view>
+        </view>
+        <view class="card-glyph font-serif">{{item.glyph}}</view>
+        <view class="card-foot">
+          <view class="card-name font-serif">{{item.nameZh}}</view>
+          <view class="card-en font-lat">{{item.nameEn}}</view>
+          <view class="card-meta font-mono">{{item.duration}} · {{item.count}}Q</view>
+        </view>
+      </view>
+    </view>
+  </view>
+
+</view>

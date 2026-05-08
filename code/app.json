@@ -1,0 +1,50 @@
+{
+  "pages": [
+    "pages/home/home",
+    "pages/explore/explore",
+    "pages/profile/profile",
+    "pages/intro/intro",
+    "pages/quiz/quiz",
+    "pages/ad/ad",
+    "pages/result/result",
+    "pages/share/share"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#F4EEE3",
+    "navigationBarTitleText": "心镜",
+    "navigationBarTextStyle": "black",
+    "backgroundColor": "#F4EEE3",
+    "enablePullDownRefresh": false
+  },
+  "tabBar": {
+    "color": "#8B8578",
+    "selectedColor": "#0E0E10",
+    "backgroundColor": "#F4EEE3",
+    "borderStyle": "white",
+    "list": [
+      {
+        "pagePath": "pages/home/home",
+        "text": "HOME",
+        "iconPath": "assets/tab/home.png",
+        "selectedIconPath": "assets/tab/home-on.png"
+      },
+      {
+        "pagePath": "pages/explore/explore",
+        "text": "EXPLORE",
+        "iconPath": "assets/tab/explore.png",
+        "selectedIconPath": "assets/tab/explore-on.png"
+      },
+      {
+        "pagePath": "pages/profile/profile",
+        "text": "MINE",
+        "iconPath": "assets/tab/mine.png",
+        "selectedIconPath": "assets/tab/mine-on.png"
+      }
+    ]
+  },
+  "style": "v2",
+  "sitemapLocation": "sitemap.json",
+  "cloud": true,
+  "lazyCodeLoading": "requiredComponents"
+}

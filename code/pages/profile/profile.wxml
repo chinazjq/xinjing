@@ -1,0 +1,78 @@
+<view class="profile">
+
+  <!-- ===== HERO ===== -->
+  <view class="hero">
+    <view class="orb orb-a"></view>
+    <view class="orb orb-b"></view>
+    <view class="hero-inner">
+      <view class="hero-label font-mono">MINE · 镜册</view>
+      <view class="hero-title font-serif">我的<text class="hero-em">镜</text>册</view>
+      <view class="hero-sub font-lat">your reflection archive</view>
+
+      <view class="user-row">
+        <button class="user-av-btn" open-type="chooseAvatar" bindchooseavatar="onChooseAvatar">
+          <image wx:if="{{user && user.avatarUrl}}" class="user-av" src="{{user.avatarUrl}}" mode="aspectFill"/>
+          <view wx:else class="user-av user-av-ph font-serif">{{user && user.nickname ? user.nickname[0] : '·'}}</view>
+        </button>
+        <view class="user-info">
+          <input class="user-name font-serif" type="nickname"
+            placeholder="{{user && user.nickname ? user.nickname : '点击设置昵称'}}"
+            value="{{user && user.nickname ? user.nickname : ''}}"
+            bindchange="onNicknameChange"/>
+          <view class="user-hint font-mono">TAP TO UPDATE</view>
+        </view>
+      </view>
+    </view>
+  </view>
+
+  <!-- ===== STATS ===== -->
+  <view class="stats">
+    <view class="stat">
+      <view class="stat-v font-serif">{{stats.total}}</view>
+      <view class="stat-k font-mono">已测</view>
+    </view>
+    <view class="stat-sep"></view>
+    <view class="stat">
+      <view class="stat-v font-serif">{{stats.unique}}</view>
+      <view class="stat-k font-mono">类型</view>
+    </view>
+    <view class="stat-sep"></view>
+    <view class="stat">
+      <view class="stat-v font-serif">{{stats.days}}</view>
+      <view class="stat-k font-mono">天数</view>
+    </view>
+  </view>
+
+  <!-- ===== HISTORY ===== -->
+  <view class="hist-section">
+    <view class="hist-head font-mono">HISTORY · 历史记录</view>
+
+    <view wx:if="{{!history.length}}" class="empty">
+      <view class="empty-glyph font-serif">·</view>
+      <view class="empty-text font-lat">还没有留下倒影</view>
+      <view class="empty-hint font-mono">从一面镜子开始吧</view>
+    </view>
+
+    <view
+      wx:for="{{history}}"
+      wx:key="id"
+      class="hcard"
+      data-rid="{{item.id}}"
+      bindtap="onTap"
+      hover-class="hcard-hover"
+      hover-stay-time="100"
+    >
+      <view class="hcard-accent" style="background:{{item.pillColor}}"></view>
+      <view class="hcard-glow" style="--hc:{{item.pillColor}}"></view>
+      <view class="hcard-body">
+        <view class="hcard-name font-serif">{{item.testName}}</view>
+        <view class="hcard-date font-mono">{{item.dateText}}</view>
+      </view>
+      <view class="hcard-code font-mono" style="color:{{item.pillColor}}">{{item.codeText}}</view>
+      <view class="hcard-del font-mono" data-id="{{item.id}}" catchtap="onDelete" hover-class="hcard-del-hover" hover-stay-time="100">×</view>
+    </view>
+
+    <view wx:if="{{history.length}}" class="clear-btn font-mono" bindtap="onClear">CLEAR ALL</view>
+  </view>
+
+</view>

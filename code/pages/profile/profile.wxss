@@ -1,0 +1,225 @@
+/* ====== BASE ====== */
+.profile { min-height: 100vh; background: #0B0B10; padding-bottom: 120rpx; }
+
+/* ====== HERO ====== */
+.hero {
+  position: relative;
+  overflow: hidden;
+  padding: 88rpx 48rpx 64rpx;
+  background-color: #0B0B10;
+  background-image: radial-gradient(circle, rgba(255,255,255,0.055) 1px, transparent 1px);
+  background-size: 18px 18px;
+}
+.orb {
+  position: absolute;
+  border-radius: 50%;
+  pointer-events: none;
+}
+.orb-a {
+  width: 500rpx; height: 500rpx;
+  right: -130rpx; top: -110rpx;
+  background: radial-gradient(circle at 58% 42%, rgba(201,79,30,0.5) 0%, transparent 62%);
+}
+.orb-b {
+  width: 320rpx; height: 320rpx;
+  left: -70rpx; bottom: -50rpx;
+  background: radial-gradient(circle at 40% 60%, rgba(239,159,39,0.3) 0%, transparent 62%);
+}
+
+.hero-inner { position: relative; z-index: 2; }
+.hero-label {
+  font-size: 20rpx;
+  color: rgba(255,255,255,0.28);
+  letter-spacing: 8rpx;
+  margin-bottom: 16rpx;
+}
+.hero-title {
+  font-size: 118rpx;
+  font-weight: 900;
+  color: rgba(244,238,227,0.95);
+  line-height: 0.9;
+  letter-spacing: -0.02em;
+}
+.hero-em { color: #C94F1E; }
+.hero-sub {
+  font-size: 22rpx;
+  color: rgba(255,255,255,0.26);
+  margin-top: 18rpx;
+  font-style: italic;
+  letter-spacing: 2rpx;
+}
+
+/* User row */
+.user-row {
+  display: flex;
+  align-items: center;
+  gap: 20rpx;
+  margin-top: 42rpx;
+}
+.user-av {
+  width: 78rpx; height: 78rpx;
+  border-radius: 50%;
+  border: 2rpx solid rgba(201,79,30,0.55);
+  box-shadow: 0 0 18px rgba(201,79,30,0.38);
+  flex-shrink: 0;
+}
+.user-av-ph {
+  background: rgba(201,79,30,0.1);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 34rpx; color: rgba(201,79,30,0.7);
+}
+.user-av-btn {
+  width: 78rpx; height: 78rpx;
+  padding: 0; margin: 0;
+  background: transparent;
+  border-radius: 50%;
+  line-height: 1;
+  flex-shrink: 0;
+}
+.user-av-btn::after { border: none; }
+.user-info { display: flex; flex-direction: column; gap: 5rpx; }
+.user-name {
+  font-size: 30rpx;
+  color: rgba(244,238,227,0.9);
+  background: transparent;
+  border: none;
+  padding: 0;
+  height: auto;
+}
+.user-hint {
+  font-size: 15rpx;
+  color: rgba(255,255,255,0.2);
+  letter-spacing: 4rpx;
+}
+
+/* ====== STATS ====== */
+.stats {
+  display: flex;
+  align-items: stretch;
+  margin: 0 24rpx;
+  background: rgba(255,255,255,0.04);
+  border: 1.5rpx solid rgba(255,255,255,0.07);
+  border-radius: 24rpx;
+  overflow: hidden;
+}
+.stat { flex: 1; text-align: center; padding: 40rpx 0; }
+.stat-v {
+  font-size: 70rpx;
+  font-weight: 900;
+  color: rgba(244,238,227,0.92);
+  line-height: 1;
+}
+.stat-k {
+  font-size: 16rpx;
+  color: rgba(255,255,255,0.24);
+  letter-spacing: 3rpx;
+  margin-top: 10rpx;
+}
+.stat-sep {
+  width: 1.5rpx;
+  background: rgba(255,255,255,0.07);
+  margin: 22rpx 0;
+}
+
+/* ====== HISTORY SECTION ====== */
+.hist-section { padding: 36rpx 24rpx 0; }
+.hist-head {
+  font-size: 18rpx;
+  color: rgba(255,255,255,0.22);
+  letter-spacing: 6rpx;
+  margin-bottom: 18rpx;
+}
+
+/* Empty state */
+.empty {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 80rpx 0;
+  gap: 12rpx;
+}
+.empty-glyph {
+  font-size: 80rpx;
+  color: rgba(255,255,255,0.08);
+  line-height: 1;
+}
+.empty-text {
+  font-size: 26rpx;
+  color: rgba(255,255,255,0.25);
+  font-style: italic;
+}
+.empty-hint {
+  font-size: 18rpx;
+  color: rgba(255,255,255,0.15);
+  letter-spacing: 3rpx;
+}
+
+/* ====== HISTORY CARD ====== */
+.hcard {
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: stretch;
+  margin-bottom: 14rpx;
+  border-radius: 20rpx;
+  border: 1.5rpx solid rgba(255,255,255,0.07);
+  background: rgba(255,255,255,0.04);
+}
+.hcard-hover { opacity: 0.62; }
+
+.hcard-accent {
+  width: 6rpx;
+  flex-shrink: 0;
+}
+.hcard-glow {
+  position: absolute;
+  top: 0; right: 0; bottom: 0; left: 0;
+  background: radial-gradient(ellipse at 0% 50%, var(--hc) 0%, transparent 52%);
+  opacity: 0.09;
+  pointer-events: none;
+}
+.hcard-body {
+  flex: 1;
+  padding: 22rpx 16rpx 22rpx 20rpx;
+  min-width: 0;
+}
+.hcard-name {
+  font-size: 32rpx;
+  font-weight: 700;
+  color: rgba(244,238,227,0.9);
+  line-height: 1.2;
+}
+.hcard-date {
+  font-size: 18rpx;
+  color: rgba(255,255,255,0.22);
+  margin-top: 6rpx;
+  letter-spacing: 1rpx;
+}
+.hcard-code {
+  flex-shrink: 0;
+  align-self: center;
+  font-size: 20rpx;
+  letter-spacing: 2rpx;
+  padding: 0 14rpx;
+  font-weight: 600;
+}
+.hcard-del {
+  flex-shrink: 0;
+  align-self: stretch;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 62rpx;
+  font-size: 26rpx;
+  color: rgba(255,255,255,0.18);
+  border-left: 1.5rpx solid rgba(255,255,255,0.07);
+}
+.hcard-del-hover { color: #C94F1E; background: rgba(201,79,30,0.08); }
+
+.clear-btn {
+  text-align: center;
+  font-size: 18rpx;
+  color: rgba(255,255,255,0.16);
+  letter-spacing: 5rpx;
+  padding: 44rpx;
+}

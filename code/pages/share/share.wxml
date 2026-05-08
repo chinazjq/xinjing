@@ -1,0 +1,25 @@
+<view class="share">
+  <view class="poster-wrap">
+    <canvas type="2d" id="poster" class="canvas"></canvas>
+    <image wx:if="{{imgUrl}}" class="preview" src="{{imgUrl}}" mode="widthFix"></image>
+    <view wx:if="{{!imgUrl}}" class="poster-loading">
+      <view class="pl-inner">
+        <view class="pl-ring"></view>
+        <view class="pl-text font-mono">正在生成海报…</view>
+      </view>
+    </view>
+  </view>
+
+  <view class="sh-caption font-serif">你是哪一种？<text class="sh-cta">点我测一测 →</text></view>
+
+  <view class="sh-actions safe-bottom">
+    <view class="act act-pri font-serif" bindtap="onSave">
+      <view class="act-ic">⇣</view>
+      <view class="font-mono">保存图片</view>
+    </view>
+    <button class="act font-mono" open-type="share">
+      <view class="act-ic font-serif">↗</view>
+      <view>分享</view>
+    </button>
+  </view>
+</view>

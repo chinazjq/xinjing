@@ -1,0 +1,42 @@
+<view class="intro" style="--tc:{{test.theme.main}};--tb:{{test.theme.bg}}">
+  <view class="hero" style="background:{{test.theme.bg}}">
+    <view class="u-caps font-mono hero-idx">MIRROR · {{test.idx}}</view>
+    <view class="hero-glyph font-serif">{{test.glyph}}</view>
+    <view class="hero-title font-serif">{{test.nameZh}}</view>
+    <view class="hero-en font-serif-italic">{{test.nameEn}}</view>
+    <view class="hero-desc">{{test.desc}}</view>
+  </view>
+
+  <view class="body">
+    <view class="block">
+      <view class="u-caps font-mono">ABOUT · 关于这面镜子</view>
+      <view class="block-text">{{test.intro}}</view>
+    </view>
+
+    <view class="block">
+      <view class="u-caps font-mono">THEORY · 理论溯源</view>
+      <view class="block-text font-serif-italic">{{test.theory}}</view>
+    </view>
+
+    <view class="meta-grid">
+      <view class="meta-cell">
+        <view class="u-caps font-mono">QUESTIONS</view>
+        <view class="meta-val font-serif">{{test.count}}</view>
+      </view>
+      <view class="meta-cell">
+        <view class="u-caps font-mono">DURATION</view>
+        <view class="meta-val font-serif">{{test.duration}}</view>
+      </view>
+      <view class="meta-cell">
+        <view class="u-caps font-mono">CATEGORY</view>
+        <view class="meta-val font-serif">{{test.cat}}</view>
+      </view>
+    </view>
+
+    <view class="note font-serif-italic">* 测试结果仅供娱乐与自我反思，不构成专业心理诊断。</view>
+
+    <view class="cta-wrap safe-bottom">
+      <view class="btn-primary" bindtap="onStart">开始测试 →</view>
+    </view>
+  </view>
+</view>

@@ -1,0 +1,124 @@
+<view class="result" style="--tc:{{test.theme.main}}">
+
+  <!-- Dark hero panel -->
+  <view class="hero-panel">
+    <view class="hero-bg"></view>
+    <view class="hero-ring"></view>
+    <view class="hp-top">
+      <view class="font-mono">RESULT · <text class="hp-unlock">{{unlocked ? '无需再次解锁' : '简版预览'}}</text></view>
+      <view class="font-mono">{{test.nameEn}} / {{test.idx}} OF 09</view>
+    </view>
+    <view wx:if="{{display.code}}" class="hp-code font-lat">TYPE · {{display.code}}</view>
+    <view class="hp-title font-serif">{{display.title}}</view>
+    <view class="hp-tags" wx:if="{{display.tags && display.tags.length}}">
+      <text wx:for="{{display.tags}}" wx:key="*this" class="hp-tag font-mono">{{item}}</text>
+    </view>
+    <view class="hp-creed font-serif">{{display.creed}}</view>
+  </view>
+
+  <!-- Unlock banner -->
+  <view wx:if="{{!unlocked}}" class="unlock-banner">
+    <view class="ub-text">完整报告已锁定，观看短视频免费解锁。</view>
+    <view class="ub-btn btn-ember" bindtap="onUnlock">解锁完整版 →</view>
+  </view>
+
+  <!-- § 01 四维剖面 -->
+  <view class="section" wx:if="{{display.dims && display.dims.length}}">
+    <view class="sec-head">
+      <view class="sh-title font-serif">四维剖面<text class="sh-en font-lat"> four axes</text></view>
+      <view class="sh-idx font-mono">§ 01</view>
+    </view>
+    <view class="bars">
+      <view wx:for="{{display.dims}}" wx:key="key" class="bar-row">
+        <view class="br-lbl font-mono">
+          <text class="br-name">{{item.name}}</text>
+          <text class="br-pct">{{item.percent}}%</text>
+        </view>
+        <view class="br-track">
+          <view class="br-fill" style="width:{{item.percent}}%"></view>
+        </view>
+        <view wx:if="{{item.left}}" class="br-poles font-lat">
+          <text>{{item.left}}</text><text>{{item.right}}</text>
+        </view>
+      </view>
+    </view>
+  </view>
+
+  <!-- § 02 深度解读 -->
+  <view class="insight-panel" wx:if="{{display.desc && display.desc.length}}">
+    <view class="insight-orb io-1"></view>
+    <view class="insight-orb io-2"></view>
+    <view class="insight-orb io-3"></view>
+    <view class="insight-inner">
+      <view class="insight-head">
+        <view class="insight-label font-mono">DEEP INSIGHT</view>
+        <view class="insight-idx font-mono">§ 02</view>
+      </view>
+      <view class="insight-title font-serif">深度解读</view>
+      <view class="insight-divider"></view>
+      <view wx:for="{{display.desc}}" wx:key="index" class="insight-para font-serif">{{item}}</view>
+    </view>
+  </view>
+
+  <!-- § 03 优势与盲区 -->
+  <view class="section" wx:if="{{unlocked && (display.strengths.length || display.shadows.length)}}">
+    <view class="sec-head">
+      <view class="sh-title font-serif">优势与盲区<text class="sh-en font-lat"> strength &amp; shadow</text></view>
+      <view class="sh-idx font-mono">§ 03</view>
+    </view>
+    <view class="str-grid">
+      <view wx:for="{{display.strengths}}" wx:key="*this" class="str-cell">
+        <view class="str-k font-mono">STRENGTH · 长处</view>
+        <view class="str-v font-serif">{{item}}</view>
+      </view>
+      <view wx:for="{{display.shadows}}" wx:key="*this" class="str-cell shd-cell">
+        <view class="str-k font-mono">SHADOW · 暗面</view>
+        <view class="str-v font-serif">{{item}}</view>
+      </view>
+    </view>
+  </view>
+
+  <!-- § 04 同款灵魂 -->
+  <view class="section" wx:if="{{unlocked && display.famousData && display.famousData.length}}">
+    <view class="sec-head">
+      <view class="sh-title font-serif">同款灵魂<text class="sh-en font-lat"> kindred souls</text></view>
+      <view class="sh-idx font-mono">§ 04</view>
+    </view>
+    <view class="famous-list">
+      <view wx:for="{{display.famousData}}" wx:key="name" class="fa-card">
+        <view class="fa-av font-serif" style="background:{{index===0?'var(--ember)':index===1?'var(--iris)':'var(--jade)'}}">{{item.name[0]}}</view>
+        <view class="fa-body">
+          <view class="fa-top">
+            <view class="fa-nm font-serif">{{item.name}}</view>
+            <view class="fa-role font-mono">{{item.role}}</view>
+          </view>
+          <view class="fa-quote font-serif">"{{item.quote}}"</view>
+        </view>
+      </view>
+    </view>
+  </view>
+
+  <!-- § 05 相性 -->
+  <view class="section" wx:if="{{unlocked && display.match && display.match.length}}">
+    <view class="sec-head">
+      <view class="sh-title font-serif">相性<text class="sh-en font-lat"> chemistry</text></view>
+      <view class="sh-idx font-mono">§ 05</view>
+    </view>
+    <view class="pair-grid">
+      <view class="pair-cell good">
+        <view class="pair-k font-mono">SOUL MATCH · 灵魂搭子</view>
+        <view class="pair-v font-serif">{{display.match[0]}}</view>
+      </view>
+      <view class="pair-cell" wx:if="{{display.match[1]}}">
+        <view class="pair-k font-mono">GROWTH CHALLENGE · 最大挑战</view>
+        <view class="pair-v font-serif">{{display.match[1]}}</view>
+      </view>
+    </view>
+  </view>
+
+  <!-- Bottom CTA -->
+  <view class="foot-cta safe-bottom">
+    <view class="btn-secondary font-mono" bindtap="onAgain">↻ 重测</view>
+    <view class="btn-share font-serif" bindtap="onShare">分享这面镜子 · SHARE →</view>
+  </view>
+</view>

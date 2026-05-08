@@ -1,0 +1,55 @@
+<view class="home">
+  <view class="grain-overlay"></view>
+
+  <view class="hero-block">
+    <view class="greet u-caps font-mono">{{today}}</view>
+    <view class="hero-h1 font-serif">照见<text class="ember-text">mirror,</text>
+      <view>今天的你。</view>
+    </view>
+    <view class="hero-sub">九套测评，从严肃的自我觉察到轻盈的自嘲玩笑——选一面开始。</view>
+  </view>
+
+  <!-- 每日箴言 -->
+  <view class="section-mark">
+    <view class="sm-title font-serif">每日箴言<text class="sm-en font-lat"> wisdom</text></view>
+    <view class="sm-more u-caps font-mono" bindtap="onTapAll" hover-class="sm-more-hover" hover-stay-time="100">全部测试 →</view>
+  </view>
+
+  <view class="wisdom-card wisdom-{{wisdom.theme}}">
+    <view class="wc-ring wc-ring-1"></view>
+    <view class="wc-ring wc-ring-2"></view>
+    <view class="wc-inner">
+      <view class="wc-label u-caps font-mono">DAILY WISDOM · 今日箴言</view>
+      <view class="wc-text font-serif">"{{wisdom.text}}"</view>
+      <view class="wc-meta font-mono">
+        <text wx:if="{{wisdom.author}}">— {{wisdom.author}}</text>
+        <text wx:if="{{wisdom.author && wisdom.source}}" class="wc-dot"> · </text>
+        <text wx:if="{{wisdom.source}}" class="wc-src">{{wisdom.source}}</text>
+      </view>
+    </view>
+    <view class="wc-date font-mono">{{today}}</view>
+  </view>
+
+  <!-- 精选测试入口 -->
+  <view class="section-mark" style="margin-top:64rpx">
+    <view class="sm-title font-serif">精选<text class="sm-en font-lat"> featured</text></view>
+  </view>
+
+  <view wx:if="{{featured}}"
+    class="card card-hero"
+    data-id="{{featured.id}}"
+    bindtap="onTapTest"
+    hover-class="card-hover"
+    hover-stay-time="100"
+  >
+    <view class="glyph-bg"></view>
+    <view class="card-inner">
+      <view class="c-idx font-mono">FEATURED · {{featured.idx}}</view>
+      <view class="c-ttl font-serif">{{featured.nameZh}}<text class="c-en font-lat"> {{featured.nameEn}}</text></view>
+      <view class="c-line">{{featured.desc}}</view>
+      <view class="c-cta font-mono">开始 · begin →</view>
+    </view>
+  </view>
+
+  <view class="footer u-caps font-mono">— MIRROR · MIRROR · MIRROR —</view>
+</view>
