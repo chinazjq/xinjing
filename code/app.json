@@ -1,6 +1,5 @@
 {
   "pages": [
-    "pages/home/home",
     "pages/explore/explore",
     "pages/profile/profile",
     "pages/intro/intro",
@@ -23,12 +22,6 @@
     "backgroundColor": "#F4EEE3",
     "borderStyle": "white",
     "list": [
-      {
-        "pagePath": "pages/home/home",
-        "text": "HOME",
-        "iconPath": "assets/tab/home.png",
-        "selectedIconPath": "assets/tab/home-on.png"
-      },
       {
         "pagePath": "pages/explore/explore",
         "text": "EXPLORE",

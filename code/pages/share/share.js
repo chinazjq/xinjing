@@ -1,24 +1,10 @@
 const { getTestById } = require('../../data/tests.js');
+const { getPersonalityImageFileID } = require('../../data/personalityImages.js');
 
 const W = 750, H = 1334;
 
-// 云存储图片映射 — 上传 AI 生成图片后填入真实的 cloud:// 文件 ID
-// 格式: 'cloud://env-id.xxx/images/personality/{key}.jpg'
-const CLOUD_IMG_MAP = {
-  // MBTI 人格图片
-  mbti_INTJ: '', mbti_INTP: '', mbti_ENTJ: '', mbti_ENTP: '',
-  mbti_INFJ: '', mbti_INFP: '', mbti_ENFJ: '', mbti_ENFP: '',
-  mbti_ISTJ: '', mbti_ISFJ: '', mbti_ESTJ: '', mbti_ESFJ: '',
-  mbti_ISTP: '', mbti_ISFP: '', mbti_ESTP: '', mbti_ESFP: '',
-  // SBTI 人格图片
-  sbti_吗喽型: '', sbti_酒鬼型: '', sbti_摆烂大师: '', sbti_卷王本王: '',
-  sbti_社牛怪: '', sbti_精神小伙: '', sbti_emo诗人: '', sbti_独行侠: '',
-  // 其他测试
-  color_R: '', color_B: '', color_Y: '', color_G: '',
-};
-
 function getCloudImgKey(testId, resultCode) {
-  return CLOUD_IMG_MAP[testId + '_' + resultCode] || '';
+  return getPersonalityImageFileID(testId, resultCode);
 }
 
 // 下载云存储图片并返回本地临时路径，失败时返回 null
@@ -280,7 +266,7 @@ Page({
   onForward() {
     wx.shareAppMessage({
       title: `我的测试结果 · 心镜`,
-      path: '/pages/home/home',
+      path: '/pages/explore/explore',
       imageUrl: this.data.imgUrl,
     });
   },
@@ -306,7 +292,7 @@ Page({
   onShareAppMessage() {
     return {
       title: `我的${this.test.nameZh}结果 · 心镜`,
-      path: '/pages/home/home',
+      path: '/pages/explore/explore',
       imageUrl: this.data.imgUrl,
     };
   },

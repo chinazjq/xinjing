@@ -48,7 +48,7 @@
   },
   "compileType": "miniprogram",
   "libVersion": "2.33.0",
-  "appid": "your-wechat-miniprogram-appid",
+  "appid": "wx549effc1445cb6b3",
   "projectname": "xinjing",
   "cloudfunctionRoot": "cloudfunctions/",
   "condition": {},

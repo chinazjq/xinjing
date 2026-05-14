@@ -33,5 +33,13 @@ Page({
 
   onTap(e) {
     wx.navigateTo({ url: `/pages/intro/intro?id=${e.currentTarget.dataset.id}` });
+  },
+
+  onShareAppMessage() {
+    return { title: '心镜 · 九面镜子照见九种自己', path: '/pages/explore/explore' };
+  },
+
+  onShareTimeline() {
+    return { title: '心镜 · Nine Mirrors' };
   }
 });

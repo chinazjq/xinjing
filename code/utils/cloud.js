@@ -13,6 +13,7 @@
 const { TESTS } = require('../data/tests.js');
 
 const _cache = Object.create(null);
+const LOCAL_FIRST = { mbti: true, sbti: true };
 
 function _call(name, data) {
   return new Promise((resolve, reject) => {
@@ -32,6 +33,11 @@ function loadTests() {
 async function loadQuestions(testId) {
   const key = 'q:' + testId;
   if (_cache[key]) return _cache[key];
+  if (LOCAL_FIRST[testId]) {
+    const qs = _localQuestions(testId);
+    _cache[key] = qs;
+    return qs;
+  }
   try {
     const r = await _call('getQuestions', { testId });
     if (r.ok && Array.isArray(r.list) && r.list.length) {
@@ -64,6 +70,10 @@ function _localQuestions(id) {
 async function loadResultDefs(testId) {
   const key = 'rd:' + testId;
   if (key in _cache) return _cache[key];
+  if (LOCAL_FIRST[testId]) {
+    _cache[key] = null;
+    return null;
+  }
   try {
     const r = await _call('getResultDefs', { testId });
     if (r.ok && r.defs) {

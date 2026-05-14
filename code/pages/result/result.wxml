@@ -10,6 +10,9 @@
     </view>
     <view wx:if="{{display.code}}" class="hp-code font-lat">TYPE · {{display.code}}</view>
     <view class="hp-title font-serif">{{display.title}}</view>
+    <view wx:if="{{display.imageUrl}}" class="hp-image-wrap hp-image-{{testId}}">
+      <image class="hp-image" src="{{display.imageUrl}}" mode="aspectFit"></image>
+    </view>
     <view class="hp-tags" wx:if="{{display.tags && display.tags.length}}">
       <text wx:for="{{display.tags}}" wx:key="*this" class="hp-tag font-mono">{{item}}</text>
     </view>

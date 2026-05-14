@@ -15,7 +15,86 @@ function scoreMBTI(questions, answers) {
   return { type, dims };
 }
 
+const SBTI_LEVEL_VALUE = { L: 1, M: 2, H: 3 };
+
+function sbtiLevel(avg) {
+  if (avg <= 1.67) return 'L';
+  if (avg <= 2.34) return 'M';
+  return 'H';
+}
+
+function flattenSbtiPattern(pattern) {
+  return String(pattern || '').replace(/-/g, '').split('');
+}
+
+function scoreSBTIPattern(questions, answers) {
+  const order = questions.DIMENSION_ORDER || [];
+  const patterns = questions.TYPE_PATTERNS || [];
+  const fallbackType = questions.FALLBACK_TYPE || 'HHHH';
+  const drunkType = questions.DRUNK_TYPE || 'DRUNK';
+  const drunkTriggerQuestionId = questions.DRUNK_TRIGGER_QUESTION_ID || 'drink_gate_q2';
+  const sums = {};
+  const counts = {};
+  let drunkTriggered = false;
+
+  questions.forEach((q, i) => {
+    const opt = q.opts && q.opts[answers[i]];
+    const value = opt ? Number(opt.value) : 2;
+    if (q.special) {
+      if (q.id === drunkTriggerQuestionId && value === 2) drunkTriggered = true;
+      return;
+    }
+    if (!q.dim) return;
+    sums[q.dim] = (sums[q.dim] || 0) + value;
+    counts[q.dim] = (counts[q.dim] || 0) + 1;
+  });
+
+  const dimensions = {};
+  const dimensionLevels = {};
+  order.forEach((dim) => {
+    const avg = counts[dim] ? sums[dim] / counts[dim] : 2;
+    dimensions[dim] = +avg.toFixed(2);
+    dimensionLevels[dim] = sbtiLevel(avg);
+  });
+
+  const userFlat = order.map(dim => dimensionLevels[dim] || 'M');
+  const pattern = userFlat.reduce((chunks, value, index) => {
+    if (index % 3 === 0) chunks.push('');
+    chunks[chunks.length - 1] += value;
+    return chunks;
+  }, []).join('-');
+
+  if (drunkTriggered) {
+    return { type: drunkType, sourceType: drunkType, pattern, similarity: 100, exact: order.length, dimensions, dimensionLevels, special: 'drink_trigger' };
+  }
+
+  let best = null;
+  patterns.forEach((item) => {
+    const target = flattenSbtiPattern(item.pattern);
+    let distance = 0;
+    let exact = 0;
+    userFlat.forEach((level, index) => {
+      if (level === target[index]) exact += 1;
+      distance += Math.abs((SBTI_LEVEL_VALUE[level] || 2) - (SBTI_LEVEL_VALUE[target[index]] || 2));
+    });
+    const similarity = Math.max(0, Math.round((1 - distance / (order.length * 2)) * 100));
+    if (!best || similarity > best.similarity || (similarity === best.similarity && exact > best.exact)) {
+      best = { ...item, similarity, exact };
+    }
+  });
+
+  if (!best || best.similarity < 60) {
+    return { type: fallbackType, sourceType: fallbackType, pattern, similarity: best ? best.similarity : 0, exact: best ? best.exact : 0, dimensions, dimensionLevels, nearest: best && best.type };
+  }
+
+  return { type: best.type, sourceType: best.sourceCode || best.type, pattern, similarity: best.similarity, exact: best.exact, dimensions, dimensionLevels };
+}
+
 function scoreSBTI(questions, answers) {
+  if (questions && questions.TYPE_PATTERNS && questions.DIMENSION_ORDER) {
+    return scoreSBTIPattern(questions, answers);
+  }
+
   const counts = {};
   questions.forEach((q, i) => {
     const opt = q.opts[answers[i]];

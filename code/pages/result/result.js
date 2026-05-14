@@ -1,6 +1,7 @@
 const { getTestById } = require('../../data/tests.js');
 const { loadResultDefs } = require('../../utils/cloud.js');
 const { getCelebrities } = require('../../data/celebrities.js');
+const { resolvePersonalityImage } = require('../../utils/personalityImage.js');
 
 const MBTI_TAG_MAP = { E: 'EXTRAVERTED', I: 'INTROVERTED', S: 'SENSING', N: 'INTUITIVE', T: 'THINKING', F: 'FEELING', J: 'JUDGING', P: 'PROSPECTING' };
 const MBTI_DIM_INFO = [
@@ -40,6 +41,7 @@ function buildDisplay(testId, result, defs) {
         famous: info.famous || [], match: info.match || [],
         dims: mbtiDims(result.dims),
         desc: info.desc || [],
+        imageKey: info.imageKey || result.type,
         _celebKey: result.type,
       };
       break;
@@ -47,10 +49,11 @@ function buildDisplay(testId, result, defs) {
     case 'sbti': {
       const info = (types('../../data/results/sbti.js'))[result.type] || {};
       display = {
-        code: '', title: info.title || result.type, creed: info.creed || '',
+        code: result.type, title: info.title || result.type, creed: info.creed || '',
         strengths: info.strengths || [], shadows: info.shadows || [],
         famous: info.famous || [],
         desc: info.desc || [],
+        imageKey: info.imageKey || result.type,
         _celebKey: result.type,
       };
       break;
@@ -165,6 +168,16 @@ function buildDisplay(testId, result, defs) {
 Page({
   data: { test: null, unlocked: true, display: {} },
 
+  resolveImage(display) {
+    if (!display || !display.imageKey) return;
+    const testId = this.data.testId;
+    const imageKey = display.imageKey;
+    resolvePersonalityImage(testId, imageKey).then((imageUrl) => {
+      if (!imageUrl || !this.data || this.data.testId !== testId || this.data.display.imageKey !== imageKey) return;
+      this.setData({ 'display.imageUrl': imageUrl });
+    });
+  },
+
   async onLoad(opt) {
     const test = getTestById(opt.id);
     if (!test) { wx.navigateBack(); return; }
@@ -172,18 +185,21 @@ Page({
     const app = getApp();
     const result = app.globalData.currentResult;
 
+    const display = buildDisplay(opt.id, result, null);
     this.setData({
       test,
       testId: opt.id,
       unlocked: opt.unlocked === '1',
-      display: buildDisplay(opt.id, result, null),
+      display,
     });
+    this.resolveImage(display);
     wx.setNavigationBarTitle({ title: test.nameZh + ' · 结果' });
 
     loadResultDefs(opt.id).then((defs) => {
       if (!defs) return;
       const updated = buildDisplay(opt.id, result, defs);
       if (this.data) this.setData({ display: updated });
+      this.resolveImage(updated);
     });
   },
 
@@ -196,14 +212,14 @@ Page({
   },
 
   onAgain() {
-    wx.reLaunch({ url: '/pages/home/home' });
+    wx.reLaunch({ url: '/pages/explore/explore' });
   },
 
   onShareAppMessage() {
     const d = this.data.display;
     return {
       title: `我的${this.data.test.nameZh}结果：${d.title || d.code}`,
-      path: '/pages/home/home',
+      path: '/pages/explore/explore',
     };
   },
 });
